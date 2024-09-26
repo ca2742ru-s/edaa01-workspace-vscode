@@ -11,5 +11,6 @@ public abstract class Player {
         return userId;
     }
 
+    //To be implemented by subclasses
     protected abstract int takePins(Board board);
 }

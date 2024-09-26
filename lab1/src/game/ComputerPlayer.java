@@ -6,6 +6,7 @@ public class ComputerPlayer extends Player{
         super(userId);
     }
 
+    //Computer that randomly takes 1 or 2 pins per round. Random is based on Math.random()
     public int takePins(Board board){
         int pinsLeft = board.getNoPins();
         int noPins;

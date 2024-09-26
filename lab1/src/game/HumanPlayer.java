@@ -9,6 +9,7 @@ public class HumanPlayer extends Player{
         scan = new Scanner(System.in);
     }
 
+    //Takes 1 or 2 pins from the board, based on user input
     public int takePins(Board board){
         
         while(true){
@@ -16,6 +17,11 @@ public class HumanPlayer extends Player{
             
             try {
                 int noPins = scan.nextInt();
+
+                /*
+                    Removes 1 or 2 pins from the board based on user input.
+                    Numbers outside this range, or illegal characters, is not accepted. 
+                */
                 if(1 <= noPins && noPins <= 2){
                     board.takePins(noPins);
                     System.out.println(userId + " removed " + noPins + " from the board.");
@@ -29,7 +35,7 @@ public class HumanPlayer extends Player{
                 }
             } catch (Exception e) {
                 System.out.println("You have entered a non-allowed input. You can remove 1 or 2 pins per round.");
-                scan.nextLine();
+                scan.nextLine();    //Needed to flush the next input line and not get stuck in infinite loop
             }
         }
     }

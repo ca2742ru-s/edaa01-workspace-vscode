@@ -9,6 +9,7 @@ public class OtherPlayer extends Player{
         this.choice = false;
     }
 
+    //New computer player that alternates between taking 1 or 2 pins each round.
     public int takePins(Board board){
         int noPins;
         if(choice){

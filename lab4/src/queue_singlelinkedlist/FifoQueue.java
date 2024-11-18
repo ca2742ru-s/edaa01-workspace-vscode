@@ -91,7 +91,7 @@ public class FifoQueue<E> extends AbstractQueue<E> {
 			this.last.next = q.last.next;
 			this.size += q.size;
 			q.last = null;
-			q.size = 0;	
+			q.size = 0;
 		}
 		else if(this.last == null && q.last != null){
 			q.last.next = this.last;

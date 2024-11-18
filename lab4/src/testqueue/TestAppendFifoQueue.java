@@ -35,7 +35,6 @@ class TestAppendFifoQueue {
         assertEquals(0, secondQueue.size(), "secondQueue is not empty");
         assertEquals(null, secondQueue.peek(), "secondQueue is not empty (last element not null)");
         
-        
         //Append queues
         firstQueue.append(secondQueue);
 

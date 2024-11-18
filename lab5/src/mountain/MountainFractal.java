@@ -80,10 +80,14 @@ public class MountainFractal extends Fractal{
             fractalTriangle(turtle, ab, b, bc, order-1, deveation/2);
             fractalTriangle(turtle, ca, bc, c, order-1, deveation/2);
             fractalTriangle(turtle, ab, bc, ca, order-1, deveation/2);
-
         }
     }
 
+    /**
+     * Creates new Point from MountainSide and adds to HashMap
+     * @param side
+     * @return Point midPoint
+     */
     private Point createPointAndAdd(MountainSide side){
         //Creates the new Point from MountainSide
         Point midPoint = new Point((side.getP1().getX()+side.getP2().getX())/2, (int) RandomUtilities.randFunc(deveation) + (side.getP1().getY()+side.getP2().getY())/2);
@@ -92,13 +96,15 @@ public class MountainFractal extends Fractal{
         return midPoint;
     }
 
+    /**
+     * Fetches Point from MountainSide side and removes it from HashMap
+     * @param side
+     * @return Point tmp
+     */
     private Point fetchPointAndRemove(MountainSide side){
         //Remove midpoint from HashMap and return
         Point tmp = sideMap.get(side);
         sideMap.remove(side);
         return tmp;
     }
-
-    
-
 }
